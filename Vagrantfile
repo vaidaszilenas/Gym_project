@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
 $script = <<SCRIPT
 DBPASSWD=root
 echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
@@ -11,7 +12,7 @@ echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect none" | debconf-se
 apt-get -y install phpmyadmin > /dev/null 2>&1
 apt-add-repository ppa:ondrej/php -y
 apt-get update
-apt-get install -y php7.0-cli php7.0-dev php7.0-pgsql php7.0-sqlite3 php7.0-gd php7.0-curl php7.0-memcached php7.0-imap php7.0-mysql php7.0-mbstring php7.0-xml php7.0-zip php7.0-bcmath php7.0-soap php7.0-intl php7.0-readline
+apt-get install php-pear php7.2-curl php7.2-dev php7.2-gd php7.2-mbstring php7.2-zip php7.2-mysql php7.2-xml
 composer self-update
 SCRIPT
 
