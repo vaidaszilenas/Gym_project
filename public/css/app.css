@@ -10000,3 +10000,719 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body {
+  background-image: url("/images/download.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Bellefair', serif;
+  font-size: 17px;
+}
+
+.background_container {
+  /* width: 900px;
+  margin: 0 auto; */
+}
+
+.mobile_icon {
+  border: 1px solid white;
+  display: inline-block;
+  background-color: red;
+  color: white;
+  height: 25px;
+  margin-top: 28px;
+  padding: 3px;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.second_icon {
+  border: 1px solid red;
+  display: none;
+  background-color: white;
+  color: red;
+  height: 25px;
+  margin-top: 28px;
+  padding: 4px;
+  margin-left: 20px;
+}
+
+/* .background_container{
+  max-width: 650px;
+  margin: 0 auto;
+} */
+
+/* header navigation */
+
+.navigat {
+  display: inline-block;
+  border: solid 2px black;
+  padding: 8px;
+  color: white;
+}
+
+.h1a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.navigat:hover {
+  border: solid 2px red;
+  padding: 8px;
+  border-radius: 10px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color: white;
+  -webkit-animation-name: borderColors;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+}
+
+@-webkit-keyframes borderColors {
+  0% {
+    border-color: white;
+  }
+
+  100% {
+    border-color: red;
+  }
+
+  /*50% { border-color: yellow; }
+  70% { border-color: grey; }
+  100% { border-color: green; }*/}
+
+.dropdown_navigat {
+  display: inline-block;
+  border: solid 2px black;
+  padding-top: 2px;
+  color: white;
+}
+
+.dropdown_navigat:hover {
+  border: solid 2px red;
+  z-index: 100;
+  border-radius: 10px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color: white;
+  -webkit-animation-name: borderColors;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+}
+
+.navigat:active {
+  background-color: white;
+  color: red;
+}
+
+.h1a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  background-color: black;
+}
+
+ul {
+  /* background-color: black; */
+  padding: 20px 0 20px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav {
+  text-align: center;
+}
+
+.margin {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.contacts {
+  margin-right: 50px;
+  padding-left: 15px;
+  margin-top: 20px;
+}
+
+/*.logo {
+  display: flex;
+
+}*/
+
+.btn.focus,
+.btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.lyrika {
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.fa-home,
+.fa-phone-volume,
+.fa-info,
+.fa-envelope,
+.fa-users,
+.fa-sign-in-alt,
+.fa-registered,
+.fa-address-book,
+.fa-bomb,
+.fa-address-card {
+  color: red;
+}
+
+.section-box {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 2px solid lightgrey;
+}
+
+.footer_normal {
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 2px solid lightgrey;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.contacts {
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.fa-facebook-square,
+.fa-twitter,
+.fa-instagram,
+.fa-youtube {
+  font-size: 30px;
+  padding: 0;
+}
+
+.fa-youtube {
+  color: #ff0000;
+}
+
+.fa-twitter {
+  color: #55acee;
+}
+
+.fa-instagram {
+  color: #c32aa3;
+}
+
+.icons {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.icons a {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* *************************************section coach ***************/
+
+.coach {
+  color: white;
+  /* background-color: white; */
+  border: 1px dotted lightgrey;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.section__coach {
+  /* background-color: white; */
+  margin-bottom: 25px;
+  margin-top: 80px;
+}
+
+.hrtag {
+  background-color: white;
+}
+
+/* ************************************************workout section */
+
+.workout_img {
+  max-width: 100%;
+  border-radius: 50px;
+}
+
+.hover:hover {
+  background-color: lightgrey;
+}
+
+.table {
+  background-color: white;
+  color: black;
+}
+
+.hover a {
+  color: black;
+}
+
+th {
+  background-color: lightgrey;
+}
+
+.workout {
+  margin-top: 60px;
+}
+
+.workout_color {
+  color: white;
+}
+
+.zumba {
+  margin-left: 15px;
+}
+
+/****************************supplements************************************/
+
+.item {
+  margin-top: 50px;
+  color: black;
+  margin-left: 5px;
+}
+
+.supplements_border {
+  color: white;
+}
+
+.img-border {
+  border: 2px solid grey;
+  border-radius: 15px;
+}
+
+.aboutus {
+  color: white;
+  padding-top: 30px;
+  border-bottom: 2px solid #FF6200;
+  margin-top: 30px;
+}
+
+.contactus {
+  border: 1px;
+  padding: 5px;
+  border-bottom: solid 5px #dddddd;
+  width: 100%;
+  background: #dddddd;
+}
+
+.adresas {
+  color: grey;
+}
+
+em {
+  padding-left: 15px;
+  margin-top: 10px;
+  color: white;
+}
+
+.mapas {
+  padding-bottom: 100px;
+  margin-top: 15px;
+}
+
+.footer_icons {
+  display: inline-block;
+}
+
+/****************************************RESPONSIVE*****************************************************/
+
+/****************************************RESPONSIVE*****************************************************/
+
+/****************************************RESPONSIVE*****************************************************/
+
+/****************************************RESPONSIVE*****************************************************/
+
+@media (min-width: 10px) and (max-width: 575.98px) {
+  .background_container {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  body {
+    /* image-resolution: snap; */
+    background-size: cover;
+    background-image: none;
+    background-color: black;
+  }
+
+  .navigat {
+    display: none;
+    color: white;
+  }
+
+  .dropdown_navigat {
+    display: none;
+  }
+
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* width: 40px; */
+  }
+
+  .dropdown-menu {
+    -webkit-transform: translate3d(-65px, -20px, 0px);
+            transform: translate3d(-65px, -20px, 0px);
+    right: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .mobile_icon {
+    border: 1px solid white;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    height: 25px;
+    margin-top: 28px;
+    padding: 4px;
+    margin-left: 20px;
+  }
+
+  .mobile_lyrika {
+    display: inline-block;
+  }
+
+  .workout_img {
+    display: none;
+  }
+
+  .workout {
+    margin: 0px;
+  }
+
+  .table {
+    display: none;
+  }
+
+  .workout {
+    margin-bottom: 0;
+  }
+
+  .footer_icons {
+    display: block;
+  }
+
+  .contacts {
+    display: block;
+  }
+}
+
+@media (min-width: 575.98px) and (max-width: 767px) {
+  .background_container {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .dropdown_navigat {
+    display: none;
+  }
+
+  body {
+    /* image-resolution: snap; */
+    background-size: cover;
+    background-image: none;
+    background-color: black;
+  }
+
+  .navigat {
+    display: none;
+    color: white;
+  }
+
+  .mobile_icon {
+    border: 1px solid white;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    height: 25px;
+    margin-top: 28px;
+    padding: 4px;
+    margin-left: 20px;
+  }
+
+  .dropdown-menu {
+    -webkit-transform: translate3d(-65px, -20px, 0px);
+            transform: translate3d(-65px, -20px, 0px);
+    right: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* width: 40px; */
+  }
+
+  .workout {
+    margin: 0;
+  }
+
+  .workout img {
+    margin-right: 50px;
+  }
+
+  .table {
+    display: none;
+  }
+
+  .contacts {
+    display: block;
+  }
+
+  .footer_icons {
+    display: block;
+  }
+
+  .coach1,
+  .coach2,
+  .coach3,
+  .coach4 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .background_container {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .dropdown_navigat {
+    display: none;
+  }
+
+  body {
+    /* image-resolution: snap; */
+    background-size: cover;
+    background-image: none;
+    background-color: black;
+  }
+
+  .navigat {
+    display: none;
+    color: white;
+  }
+
+  .mobile_icon {
+    border: 1px solid white;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    height: 25px;
+    margin-top: 28px;
+    padding: 4px;
+    margin-left: 20px;
+  }
+
+  .dropdown-menu {
+    -webkit-transform: translate3d(-65px, -20px, 0px);
+            transform: translate3d(-65px, -20px, 0px);
+    right: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* width: 40px; */
+  }
+
+  .workout img {
+    margin-top: 100px;
+  }
+
+  .contacts {
+    display: block;
+  }
+
+  .map_insert {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .background_container {
+    width: 950px;
+    margin: 0 auto;
+  }
+
+  .dropdown_navigat {
+    display: none;
+  }
+
+  body {
+    /* image-resolution: snap; */
+    background-size: cover;
+    background-image: none;
+    background-color: black;
+  }
+
+  .navigat {
+    display: none;
+    color: white;
+  }
+
+  .dropdown-menu {
+    -webkit-transform: translate3d(-65px, -20px, 0px);
+            transform: translate3d(-65px, -20px, 0px);
+    right: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* width: 40px; */
+  }
+
+  .map_insert {
+    margin: 0 auto;
+  }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .background_container {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .dropdown_navigat {
+    display: none;
+  }
+
+  body {
+    /* image-resolution: snap; */
+    background-size: cover;
+    background-image: none;
+    background-color: black;
+  }
+
+  .dropdown-menu {
+    -webkit-transform: translate3d(-65px, -20px, 0px);
+            transform: translate3d(-65px, -20px, 0px);
+    right: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .navigat {
+    display: none;
+    color: white;
+  }
+
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* width: 40px; */
+  }
+
+  .map_insert {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1919px) {
+  .background_container {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .map_insert {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1920px) {
+  .background_container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .workout {
+    margin-top: 100px;
+  }
+
+  .workout_img {
+    margin-right: 100px;
+  }
+
+  .map_insert {
+    margin: 0 auto;
+  }
+}
+
