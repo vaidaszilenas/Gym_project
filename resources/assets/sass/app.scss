@@ -529,6 +529,7 @@ body{
    display: none;
  }
 
+
  body{
    /* image-resolution: snap; */
    background-size: cover;
@@ -563,6 +564,7 @@ body{
   width: 1000px;
   margin: 0 auto;
   }
+
   .dropdown_navigat{
     display: none;
   }
@@ -600,6 +602,9 @@ body{
     width: 900px;
     margin: 0 auto;
   }
+ .mobile_icon{
+    display: none !important;
+  }
 
   .map_insert{
     margin: 0 auto;
@@ -614,6 +619,7 @@ body{
   margin: 0 auto;
 }
 
+
    .workout{
    margin-top: 100px;
   }
@@ -622,6 +628,8 @@ body{
   }
   .map_insert{
     margin: 0 auto;
-
+  }
+ .mobile_icon{
+    display: none !important;
   }
 }

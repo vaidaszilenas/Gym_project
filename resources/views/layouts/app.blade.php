@@ -16,7 +16,7 @@
             <div class="col-md">
               <nav>
                 <div class="mobile_lyrika pull-left">
-                  <a href="#"><img src="{{asset('images/img.png')}}" alt="" class="float-md-left lyrika"></a>
+                  <a href="{{route('index')}}"><img src="{{asset('images/img.png')}}" alt="" class="float-md-left lyrika"></a>
                 </div>
                 <button class="navbar-toggler pull-right mobile_icon" id="btn" type="button" data-toggle="collapse" data-target="#collapsingNavbar1" onclick="myFunction()">
                   <a>   ☰</a>
@@ -31,7 +31,7 @@
                   </li>
                   <li class="navigat margin">
                     <i class="fas fa-info"></i>
-                    <a href="" class="h1a">Supplements</a>
+                    <a href="{{route('supplements')}}" class="h1a">Supplements</a>
                   </li>
                   <li class="navigat margin">
                     <i class="fas fa-users"></i>
@@ -75,7 +75,7 @@
 
           </main>
           <footer>
-          <section class="footer_normal">
+          <section class="{{$class}}">
             <div class="container">
               <div class="row">
                 <div class="col-md  text-center">
@@ -118,18 +118,19 @@
 
 
               $(document).ready(function(){
+
                     $( ".mobile_icon" ).click(function() {
-                $( ".navigat, .dropdown_navigat" ).toggle( "slow", function() {
-                $( ".mobile_icon" ).hide();
-                $( ".second_icon" ).show();
-              });
+                      $( ".navigat, .dropdown_navigat" ).toggle( "slow", function() {
+                      $( ".mobile_icon" ).hide();
+                      $( ".second_icon" ).show();
+                    });
                     });
 
                     $( ".second_icon" ).click(function() {
                       $( ".navigat, .dropdown_navigat" ).toggle( "slow", function() {
-                $( ".second_icon" ).hide();
-                $( ".mobile_icon" ).show();
-              });
+                        $( ".second_icon" ).hide();
+                        $( ".mobile_icon" ).show();
+                      });
                     });
 
                     });

@@ -10692,6 +10692,10 @@ em {
     margin: 0 auto;
   }
 
+  .mobile_icon {
+    display: none !important;
+  }
+
   .map_insert {
     margin: 0 auto;
   }
@@ -10713,6 +10717,10 @@ em {
 
   .map_insert {
     margin: 0 auto;
+  }
+
+  .mobile_icon {
+    display: none !important;
   }
 }
 

@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*IndexController*/
+Route::get('/', 'IndexController@index')->name('index');
+
+
+
+Route::get('/supplements', 'SupplementsController@index')->name('supplements');
+Route::get('/supplements-create', 'SupplementsController@create')->name('supplements-create');
+Route::post('/store', 'SupplementsController@store')->name('supplements-store');
