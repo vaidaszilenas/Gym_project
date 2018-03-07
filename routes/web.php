@@ -25,3 +25,6 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::get('/supplements', 'SupplementsController@index')->name('supplements');
 Route::get('/supplements-create', 'SupplementsController@create')->name('supplements-create');
 Route::post('/store', 'SupplementsController@store')->name('supplements-store');
+Route::get('/supplements-edit/{id}', 'SupplementsController@edit')->name('supplements-edit');
+Route::post('/update/{id}', 'SupplementsController@update')->name('supplements-update');
+Route::delete('/destroy/{id}', 'SupplementsController@destroy')->name('supplements-destroy');

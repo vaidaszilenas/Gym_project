@@ -14,13 +14,13 @@
            New Supplements
          </h1>
            <div class="panel-body">
-               <form class="form-horizontal" method="POST" action="{{ route('supplements-store')}}" enctype="multipart/form-data">
+               <form class="form-horizontal" method="POST" action="{{route('supplements-update', $supplement->id)}}" enctype="multipart/form-data">
                  {!!csrf_field() !!}
 
                <div class="form-group">
                        <label for="title" class="col-md-4 control-label">Title</label>
                        <div class="col-md-6">
-                           <input id="title" type="text" class="form-control" name="title" value="{{old('title')}}">
+                           <input id="title" type="text" class="form-control" name="title" value="{{old('title', $supplement->title)}}">
                            @if ($errors->has('title'))
                              <span style="color:red;">{{$errors->first('title')}}</span><br>
                            @endif
@@ -30,7 +30,7 @@
                    <div class="form-group">
                        <label for="price" class="col-md-4 control-label">Price</label>
                        <div class="col-md-6">
-                           <input id="price" type="text" step="0.01" class="form-control" name="price" value="{{old('price')}}">
+                           <input id="price" type="text" step="0.01" class="form-control" name="price" value="{{old('price',$supplement->price)}}">
                            @if ($errors->has('price'))
                              <span style="color:red;">{{$errors->first('price')}}</span><br>
                            @endif

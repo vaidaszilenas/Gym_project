@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Supplement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class SupplementsController extends Controller
 {
@@ -38,6 +40,12 @@ class SupplementsController extends Controller
      */
     public function store(Request $request)
     {
+      $validatedData = $request->validate([
+        'file_name'=>'required',
+        'title'=>'required|min:2',
+        'price'=>'required|numeric'
+      ]);
+
       $path = $request->file('file_name')->storePublicly('public/images');
       var_dump($path);;
       $post = [
@@ -70,9 +78,12 @@ class SupplementsController extends Controller
      * @param  \App\Supplement  $supplement
      * @return \Illuminate\Http\Response
      */
-    public function edit(Supplement $supplement)
+    public function edit(Supplement $supplement, $id)
     {
-        //
+      $supplement = Supplement::findOrFail($id);
+      return view('supplements.edit', [
+        'supplement'=>$supplement
+      ]);
     }
 
     /**
@@ -82,9 +93,26 @@ class SupplementsController extends Controller
      * @param  \App\Supplement  $supplement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Supplement $supplement)
+    public function update(Request $request, Supplement $supplement, $id)
     {
-        //
+      $validatedData = $request->validate([
+        'file_name'=>'required',
+        'title'=>'required|min:2',
+        'price'=>'required|numeric'
+      ]);
+          $post = [
+         'title'=>$request['title'],
+         'price'=>$request['price']
+       ];
+         $supplement = Supplement::findOrFail($id);
+       if ($request->hasFile('file_name')){
+         $path = $request->file('file_name')->storePublicly('public/images');
+         $post['file_name'] = $path;
+       }
+
+
+       $supplement->update($post);
+       return redirect()->to('supplements');
     }
 
     /**
@@ -93,8 +121,11 @@ class SupplementsController extends Controller
      * @param  \App\Supplement  $supplement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Supplement $supplement)
+    public function destroy(Supplement $supplement, $id)
     {
-        //
+      $supplement = Supplement::findOrFail($id);
+      $supplement::destroy($id);
+      Storage::disk('local')->delete($supplement['file_name']);
+      return redirect()->to('supplements');
     }
 }
