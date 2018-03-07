@@ -36,4 +36,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+    }
+    protected  function authCheck(){
+      if (Auth::check()) {
+        return view('index.index');
+      }else {
+        return view('auth.register');
+      }
+
+
+    }
 }

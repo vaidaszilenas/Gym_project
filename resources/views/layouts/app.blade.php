@@ -27,7 +27,7 @@
                 <ul class="nav">
                   <li class="navigat margin">
                     <i class="fas fa-home"></i>
-                    <a href="" class="h1a">Home</a>
+                    <a href="{{route('index')}}" class="h1a">Home</a>
                   </li>
                   <li class="navigat margin">
                     <i class="fas fa-info"></i>
@@ -50,13 +50,51 @@
                       <a class="dropdown-item" href="#">K-1</a>
                     </div>
                   </div>
+
+
+
+
                   <li class="navigat margin">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <a href="" class="h1a">Login</a>
+                    @if (!Auth::check())
+                      <i class="fas fa-sign-in-alt"></i>
+                      <a href="{{route('login')}}" class="h1a">Login</a>
+                    @endif
+
+
+                    @if (Auth::check())
+                      @if (Auth::user()->isAdmin())
+
+                        <i class="fas fa-sign-in-alt"></i>
+                        <a href="{{route('login')}}" class="h1a">Admin</a>
+
+                      @elseif (Auth::user())
+                        <i class="fas fa-sign-in-alt"></i>
+                        <a href="{{route('login')}}" class="h1a">{{ ucfirst(Auth::user()->name) }}</a>
+                      @endif
+                    @endif
+
                   </li>
+
+
+
+
+
                   <li class="navigat margin">
-                    <i class="fas fa-registered"></i>
-                    <a href="" class="h1a">Register</a>
+                    @if (Auth::check())
+                      <i class="fas fa-registered"></i>
+                      <a href="#" class="h1a"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            Logout
+                      </a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                      @elseif (!Auth::check())
+                        <i class="fas fa-registered"></i>
+                        <a href="{{route('register')}}" class="h1a">Register</a>
+                    @endif
+
                   </li>
                   <li class="navigat contact">
                     <i class="fas fa-address-book"></i>

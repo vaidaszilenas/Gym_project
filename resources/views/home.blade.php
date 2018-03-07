@@ -1,13 +1,13 @@
 @extends('layouts.app',[
-  'class' => 'footer_normal'
+  'class' => 'section-box'
 
 ])
 
 @section('content')
-<div class="container">
+<div class="background_container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-4">
+            <div class="card bg-dark text-white text-center" style="border: 1px solid red">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
