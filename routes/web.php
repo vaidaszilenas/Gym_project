@@ -32,4 +32,8 @@ Route::delete('/destroy/{id}', 'SupplementsController@destroy')->name('supplemen
 
 
 
-/***********************login***************************/
+/***********************about***************************/
+Route::get('/about-us', 'AboutController@index')->name('about');
+
+
+/***********************Workout***************************/

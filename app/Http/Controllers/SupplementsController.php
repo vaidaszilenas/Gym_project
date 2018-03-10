@@ -14,12 +14,12 @@ class SupplementsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $supplements = Supplement::all();
-        return view('supplements.supplements', [
-          'supplement' => $supplements
-        ]);
+        // $supplements = Supplement::all();
+        $searchTerm = $request->input('searchTerm');
+        $supplements = Supplement::search($searchTerm)->get();
+        return view('supplements.supplements', compact('supplements', 'searchTerm'));
     }
 
     /**
@@ -47,7 +47,7 @@ class SupplementsController extends Controller
       ]);
 
       $path = $request->file('file_name')->storePublicly('public/images');
-      var_dump($path);;
+
       $post = [
         'file_name'=> $path,
         'title'=>$request['title'],

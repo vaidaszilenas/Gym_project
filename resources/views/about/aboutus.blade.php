@@ -23,7 +23,7 @@
             <p class="text-center"><em><strong>If you have any questions, do not hesitate to visit us and contact us !</strong></em></p>
           </div>
 
-          <div class="col-md-12 col-12 col-sm-12 mapas">
+          <div class="col-md-12 col-12 col-sm-12 mapas text-center">
             <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyByPBmnsim6UnipRKPC7NhM9ZcvynxQ_EY'></script>
             <div style='overflow:hidden;margin: 0 auto;'>
               <div id='gmap_canvas' class="map_insert" style='height:500px;width:600px;'></div>

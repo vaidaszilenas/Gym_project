@@ -4,6 +4,7 @@
 ])
 
 @section('content')
+  <meta http-equiv="refresh" content="1.5; {{route("index")}}">
 <div class="background_container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-4">
