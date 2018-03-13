@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Workout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class WorkoutController extends Controller
 {
@@ -14,7 +15,10 @@ class WorkoutController extends Controller
      */
     public function index()
     {
-        return view('workouts.workouts');
+        $workouts = Workout::all();
+        return view('workouts.workouts',[
+          'workouts' => $workouts
+      ]);
     }
 
 
@@ -25,7 +29,7 @@ class WorkoutController extends Controller
      */
     public function create()
     {
-        //
+          return view('workouts.form');
     }
 
     /**
@@ -36,7 +40,37 @@ class WorkoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validatedData = $request->validate([
+        'file_name'=>'required',
+        'workout'=>'required|min:2',
+        'description'=>'required|min:10',
+        'day'=>'required',
+        'time'=>'required'
+
+      ]);
+
+
+      $getValueDay = $request->input('day');
+      $getValueTime = $request->input('time');
+
+      $path = $request->file('file_name')->storePublicly('public/images/workouts');
+
+      $post = [
+        'file_name'=> $path,
+        'workout'=>$request['workout'],
+        'description'=>$request['description'],
+        'day'=>$getValueDay['0'],
+        'time'=>$getValueTime
+      ];
+
+      // var_dump($post);
+
+      Workout::create($post);
+
+      $post = $request->except('_token');
+
+
+      return redirect()->route('workout');
     }
 
     /**

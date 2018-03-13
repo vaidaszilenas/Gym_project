@@ -48,6 +48,9 @@
                       <a class="dropdown-item" href="#">Yoga</a>
                       <a class="dropdown-item" href="#">Zumba</a>
                       <a class="dropdown-item" href="#">K-1</a>
+                        <li class="dropdown-divider"></li >
+                           <a class="dropdown-item" href="{{route('workout')}}">Workouts</a>
+                         </li>
                     </div>
                   </div>
 
