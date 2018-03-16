@@ -24,7 +24,7 @@ class SupplementsSeeder extends Seeder
 
        $faker->name();
 
-     foreach(range(1,10) as $x) {
+     foreach(range(1,1) as $x) {
        $url = $faker->image($dir = 'storage/app/public/images', $width = 640, $height = 480, 'sports');
 
        $supplement = new Supplement;

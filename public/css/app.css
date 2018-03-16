@@ -10000,6 +10000,10 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+main {
+  min-height: 76.5vh;
+}
+
 body {
   background-image: url("/images/download.jpg");
   background-size: cover;

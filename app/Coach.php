@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Workout extends Model
+class Coach extends Model
 {
-  protected $fillable = ['workout', 'description', 'file_name', 'time', 'day'];
- protected $table = 'workout';
+  protected $fillable = ['name', 'surname', 'email', 'phone', 'description', 'file_name'];
+  protected $table = 'coach';
 
  public function getUrlAttribute()
 {
@@ -16,8 +16,5 @@ class Workout extends Model
   $photoUrl[0] = 'storage';
   $photoUrl = implode('/', $photoUrl);
   return $photoUrl;
-}
-public function user(){
-  return $this->belongsTo('App\User', 'users_id');
 }
 }

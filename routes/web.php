@@ -35,6 +35,14 @@ Route::delete('/destroy/{id}', 'SupplementsController@destroy')->name('supplemen
 /***********************about***************************/
 Route::get('/about-us', 'AboutController@index')->name('about');
 
+/* coaches */
+Route::get('/coaches', 'CoachController@index')->name('coaches');
+Route::get('/coaches-create', 'CoachController@create')->name('coaches-create');
+Route::post('/coaches-store', 'CoachController@store')->name('coaches-store');
+Route::get('/coaches-edit/{id}', 'CoachController@edit')->name('coaches-edit');
+Route::post('/update/{id}', 'CoachController@update')->name('coaches-update');
+Route::delete('/coaches-destroy/{id}', 'CoachController@destroy')->name('coaches-destroy');
+
 
 /***********************Workout***************************/
 Route::get('/workout', 'WorkoutController@index')->name('workout');

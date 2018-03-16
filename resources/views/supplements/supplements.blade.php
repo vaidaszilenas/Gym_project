@@ -1,7 +1,7 @@
 @extends('layouts.app',[
   'class' => 'footer_normal'
 ])
-@section('content')
+@section("content")
 
 
 

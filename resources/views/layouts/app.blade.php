@@ -35,12 +35,13 @@
                   </li>
                   <li class="navigat margin">
                     <i class="fas fa-users"></i>
-                    <a href="" class="h1a">Coaches</a>
+                    <a href="{{route('coaches')}}" class="h1a">Coaches</a>
                   </li>
                   <div class="dropdown show dropdown_navigat">
                     <a class="btn h1a dropdown-toggle size" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" style="font-size: 17px;">
                       <i class="fas fa-bomb"></i> Workouts
                     </a>
+
 
                     <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="#">Crossfit</a>
