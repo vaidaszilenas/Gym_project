@@ -42,21 +42,24 @@
                       <i class="fas fa-bomb"></i> Workouts
                     </a>
 
-
                     <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Crossfit</a>
-                      <a class="dropdown-item" href="#">HIIT</a>
-                      <a class="dropdown-item" href="#">Yoga</a>
-                      <a class="dropdown-item" href="#">Zumba</a>
-                      <a class="dropdown-item" href="#">K-1</a>
+
+                      @foreach ($workouts as $workout)
+
+                        <a class="dropdown-item" href="{{route('workout-show', $workout->id)}}">{{$workout->workout}}</a>
+
+                      @endforeach
+
+
+                      @if (Auth::check())
+                        @if (Auth::user()->isAdmin())
                         <li class="dropdown-divider"></li >
                            <a class="dropdown-item" href="{{route('workout')}}">Workouts</a>
                          </li>
+                       @endif
+                     @endif
                     </div>
                   </div>
-
-
-
 
                   <li class="navigat margin">
                     @if (!Auth::check())
@@ -78,9 +81,6 @@
                     @endif
 
                   </li>
-
-
-
 
 
                   <li class="navigat margin">

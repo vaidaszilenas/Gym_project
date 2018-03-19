@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Workout;
+use Auth;
+use DB;
+use App\Quotation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -15,11 +18,13 @@ class WorkoutController extends Controller
      */
     public function index()
     {
+
         $workouts = Workout::all();
         return view('workouts.workouts',[
           'workouts' => $workouts
       ]);
     }
+
 
 
     /**
@@ -60,7 +65,8 @@ class WorkoutController extends Controller
         'workout'=>$request['workout'],
         'description'=>$request['description'],
         'day'=>$getValueDay['0'],
-        'time'=>$getValueTime
+        'time'=>$getValueTime,
+        'users_id'=>Auth::user()->id
       ];
 
       // var_dump($post);
@@ -79,9 +85,13 @@ class WorkoutController extends Controller
      * @param  \App\Workout  $workout
      * @return \Illuminate\Http\Response
      */
-    public function show(Workout $workout)
+    public function show(Workout $workout, $id)
     {
-        //
+      $workout = Workout::findOrFail($id);
+      // var_dump($workout);
+      return view('workouts.show',[
+        'workout' => $workout
+    ]);
     }
 
     /**

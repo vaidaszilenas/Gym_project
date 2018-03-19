@@ -48,6 +48,7 @@ Route::delete('/coaches-destroy/{id}', 'CoachController@destroy')->name('coaches
 Route::get('/workout', 'WorkoutController@index')->name('workout');
 Route::get('/workout-create', 'WorkoutController@create')->name('workout-create');
 Route::post('/workout-store', 'WorkoutController@store')->name('workout-store');
+Route::get('/workout-show/{id}', 'WorkoutController@show')->name('workout-show');
 // Route::get('/workout-edit/{id}', 'WorkoutController@edit')->name('workout-edit');
 // Route::post('/workout-update/{id}', 'WorkoutController@update')->name('workout-update');
 // Route::delete('/workout-destroy/{id}', 'WorkoutController@destroy')->name('workout-destroy');

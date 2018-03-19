@@ -1,12 +1,12 @@
 <?php
 
 namespace App;
-
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Workout extends Model
 {
-  protected $fillable = ['workout', 'description', 'file_name', 'time', 'day'];
+  protected $fillable = ['workout', 'description', 'file_name', 'time', 'day', 'users_id'];
  protected $table = 'workout';
 
  public function getUrlAttribute()
@@ -18,6 +18,6 @@ class Workout extends Model
   return $photoUrl;
 }
 public function user(){
-  return $this->belongsTo('App\User', 'users_id');
+    return $this->belongsTo('App\User', 'users_id');
 }
 }
