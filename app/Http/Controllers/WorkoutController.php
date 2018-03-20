@@ -88,9 +88,31 @@ class WorkoutController extends Controller
     public function show(Workout $workout, $id)
     {
       $workout = Workout::findOrFail($id);
-      // var_dump($workout);
+      $workouts = Workout::orderBy('time')->get()->groupBy('time')->map(function($day){
+        return $day->groupBy('day');
+      });
+      // dd($workouts);
       return view('workouts.show',[
-        'workout' => $workout
+        'workout' => $workout,
+        'workoutPlan' => $workouts->toArray(),
+        'days' => [
+          "monday",
+          "thuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ],
+        'times' => [
+          "8"=>"08:00",
+          "9"=>"09:00",
+          "10"=>"10:00",
+          "11"=>"11:00",
+          "14"=>"14:00",
+          "18"=>"18:00",
+          "20"=>"20:00"
+        ]
     ]);
     }
 

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use DB;
 use View;
+use App\Http\Controllers\Auth;
 
 class Controller extends BaseController
 {
@@ -15,10 +16,10 @@ class Controller extends BaseController
 
     public function __construct()
  {
-   //its just a dummy data object.
-   $workouts = DB::table('workout')->select('workout')->get();
-
-   // Sharing is caring
-   View::share('workouts', $workouts);
+   // //its just a dummy data object.
+   // $workouts = DB::table('workout')->get();
+   //
+   // // Sharing is caring
+   // View::share('workouts', $workouts);
  }
 }

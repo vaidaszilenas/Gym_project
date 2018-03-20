@@ -52,3 +52,5 @@ Route::get('/workout-show/{id}', 'WorkoutController@show')->name('workout-show')
 // Route::get('/workout-edit/{id}', 'WorkoutController@edit')->name('workout-edit');
 // Route::post('/workout-update/{id}', 'WorkoutController@update')->name('workout-update');
 // Route::delete('/workout-destroy/{id}', 'WorkoutController@destroy')->name('workout-destroy');
+
+Route::post('/resgistration', 'RegistrationController@store')->name('resgistration');

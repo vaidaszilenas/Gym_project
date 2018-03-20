@@ -20,7 +20,7 @@ class AddWorkouts extends Migration
           $table->string('file_name');
           $table->string('description');
           $table->string('day');
-          $table->string('time');
+          $table->integer('time');
           $table->timestamps();
           $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 
