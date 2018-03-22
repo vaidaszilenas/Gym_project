@@ -16,7 +16,7 @@ class CoachController extends Controller
      */
     public function index()
     {
-      $coaches = Coach::all();
+      $coaches = Coach::paginate(10);
       return view('coach.coach', [
         'coaches' => $coaches
       ]);

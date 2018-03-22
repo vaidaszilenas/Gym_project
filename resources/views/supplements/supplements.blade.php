@@ -32,7 +32,7 @@
               <img src="{{ $supplement->getUrlAttribute() }}" alt="" class="img-fluid img-border">
               <div class="supplements_border">
                 <span>{{$supplement->title}}</span><br>
-                <span>{{$supplement->price}}</span><br>
+                <span>${{$supplement->price}}</span><br>
               @if (Auth::check())
                 @if (Auth::user()->isAdmin())
                   <a href="{{route('supplements-edit', $supplement->id)}}" class="btn btn-warning btn-sm" style="background-color: black; border: 1px solid red; color: white;">Edit</a>
@@ -48,6 +48,7 @@
             </div>
           </div>
 
+
         @endforeach
           </div>
           </div>
@@ -59,6 +60,5 @@
       </div>
     @endif
   @endif
-
-
+  
   @endsection

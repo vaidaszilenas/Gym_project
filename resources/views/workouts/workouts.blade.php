@@ -10,7 +10,7 @@
         @foreach ($workouts as $workout)
         <div class="col-md-4 col- workout workout_color">
           <h2 class="zumba">{{$workout['workout']}}</h2>
-            <a href="#"><img src="{{$workout->getUrlAttribute()}}" alt="" class="img-fluid"></a> 
+            <a href="{{route('workout-show', $workout->id)}}"><img src="{{$workout->getUrlAttribute()}}" alt="" class="img-fluid"></a> 
           </div>
         @endforeach
         </div>

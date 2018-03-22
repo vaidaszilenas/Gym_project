@@ -10004,6 +10004,24 @@ main {
   min-height: 90vh;
 }
 
+.page-link {
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+}
+
+.page-item:hover {
+  background-color: red;
+}
+
+.page-link:hover {
+  background-color: red;
+}
+
+.page-link:active {
+  background-color: red;
+}
+
 body {
   background-image: url("/images/download.jpg");
   background-size: cover;

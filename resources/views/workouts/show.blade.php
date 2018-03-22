@@ -11,14 +11,14 @@
       <div class="row">
             <div class="col-md-6 col- workout workout_color">
               <h2 class="zumba">{{$workout->workout}}</h2>
+                <p>{{$workout->description}}</p>
             </div>
-            <div class="col-md-6 col- workout">
-              <img class="float-right workout_img" id="img_important" src="{{$workout->getUrlAttribute()}}" alt="">
+            <div class="col-md-6 col- workout mb-3">
+                @if ($workout->file_name != NULL)
+                  <img class="workout_img" src="{{$workout->getUrlAttribute()}}" alt="">
+                @endif
             </div>
-            <div class="col-md-12 col- workout_color">
-              <p>{{$workout->description}}</p>
 
-            </div>
         </div>
     </div>
   </section>
@@ -89,7 +89,15 @@
 
             </tbody>
           </table>
-          {{-- {{ dump($workoutPlan) }} --}}
+          @if (Auth::check())
+            @if (Auth::user()->isAdmin())
+          <form class="mb-5" action="{{route('workout-destroy', $workout->id)}}" method="post" style="display: inline-block;">
+            {{ csrf_field() }}
+            {{ method_field('delete') }}
+            <button type="submit" name="button" class="btn btn-warning btn-sm" style="background-color: black; border: 1px solid red; color: white;">Delete</button>
+          </form>
+        @endif
+      @endif
         </div>
       </div>
     </div>

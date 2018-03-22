@@ -18,8 +18,8 @@ class CoachSeeder extends Seeder
 
     $faker->name();
 
-  foreach(range(1,10) as $x) {
-    $url = $faker->image($dir = 'storage/app/public/images', $width = 640, $height = 480, 'sports');
+  foreach(range(1,40) as $x) {
+    $url = $faker->image($dir = 'storage/app/public/images', $width = 640, $height = 480, 'people');
 
     $coach = new Coach;
     $coach->name = $faker->name;

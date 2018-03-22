@@ -8,6 +8,8 @@ use DB;
 use App\Quotation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class WorkoutController extends Controller
 {
@@ -85,13 +87,13 @@ class WorkoutController extends Controller
      * @param  \App\Workout  $workout
      * @return \Illuminate\Http\Response
      */
-    public function show(Workout $workout, $id)
+    public function show(Workout $workout, Request $request, $id)
     {
       $workout = Workout::findOrFail($id);
       $workouts = Workout::orderBy('time')->get()->groupBy('time')->map(function($day){
         return $day->groupBy('day');
       });
-      // dd($workouts);
+
       return view('workouts.show',[
         'workout' => $workout,
         'workoutPlan' => $workouts->toArray(),
@@ -114,7 +116,14 @@ class WorkoutController extends Controller
           "20"=>"20:00"
         ]
     ]);
+    // $url = $request->url();
+    // $photoUrl = explode('/', $url.$workout->file_name);
+    // $photoUrl[3] = 'storage';
+    // $photoUrl[4] = 'public';
+    //   $photoUrl = implode('/', $photoUrl);
+    // dd($photoUrl);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -145,8 +154,11 @@ class WorkoutController extends Controller
      * @param  \App\Workout  $workout
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workout $workout)
+    public function destroy(Workout $workout, $id)
     {
-        //
+      $workout = Workout::findOrFail($id);
+      $workout::destroy($id);
+      Storage::disk('local')->delete($workout['file_name']);
+      return redirect()->to('workout');
     }
 }

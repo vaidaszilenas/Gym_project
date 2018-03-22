@@ -24,7 +24,7 @@ class WorkoutSeeder extends Seeder
 
      $faker->name();
 
-   foreach(range(1,5) as $x) {
+   foreach(range(1,40) as $x) {
      $url = $faker->image($dir = 'storage/app/public/images', $width = 640, $height = 480, 'sports');
 
      $workout = new Workout;

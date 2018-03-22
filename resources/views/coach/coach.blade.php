@@ -36,8 +36,22 @@
         </div>
 
     </div>
-    <div class="col-md-12 col-sm-12 mb-4 text-center">
+    @if (Auth::check())
+      @if (Auth::user()->isAdmin())
+    <div class="col-md-12 col-sm-12 text-center">
       <a href="{{route('coaches-create')}}" class="btn btn-info" style="background-color: black; border: 1px solid red;"> Add Coaches</a>
+
     </div>
+  @endif
+@endif
+<ul class="text-center" style="justify-content: center;">
+
+  {{$coaches->links()}}
+
+</ul>
+
   </section>
+
+
+
 @endsection

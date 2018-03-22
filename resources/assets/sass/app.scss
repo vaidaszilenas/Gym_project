@@ -12,8 +12,23 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
 main{
   min-height: 90vh;
+}
+.page-link{
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+}
+.page-item:hover{
+  background-color: red;
+}
+.page-link:hover{
+  background-color: red;
+}
+.page-link:active{
+  background-color: red;
 }
 
 body{

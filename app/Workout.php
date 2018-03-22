@@ -2,6 +2,7 @@
 
 namespace App;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Workout extends Model
@@ -15,8 +16,10 @@ class Workout extends Model
   $photoUrl = explode('/', $this->file_name);
   $photoUrl[0] = 'storage';
   $photoUrl = implode('/', $photoUrl);
+
   return $photoUrl;
 }
+
 public function user(){
     return $this->belongsTo('App\User', 'users_id');
 }
