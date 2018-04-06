@@ -102,7 +102,6 @@ class CoachController extends Controller
     public function update(Request $request, Coach $coach, $id)
     {
       $validatedData = $request->validate([
-        'file_name'=>'required',
         'name'=>'required|min:2',
         'surname'=>'required|min:2',
         'email'=>'required',

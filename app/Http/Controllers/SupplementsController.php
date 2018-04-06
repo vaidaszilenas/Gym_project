@@ -96,7 +96,6 @@ class SupplementsController extends Controller
     public function update(Request $request, Supplement $supplement, $id)
     {
       $validatedData = $request->validate([
-        'file_name'=>'required',
         'title'=>'required|min:2',
         'price'=>'required|numeric'
       ]);

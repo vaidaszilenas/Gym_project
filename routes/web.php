@@ -26,7 +26,7 @@ Route::get('/supplements', 'SupplementsController@index')->name('supplements');
 Route::get('/supplements-create', 'SupplementsController@create')->name('supplements-create')->middleware('IsAdmin');
 Route::post('/store', 'SupplementsController@store')->name('supplements-store')->middleware('IsAdmin');
 Route::get('/supplements-edit/{id}', 'SupplementsController@edit')->name('supplements-edit')->middleware('IsAdmin');
-Route::post('/update/{id}', 'SupplementsController@update')->name('supplements-update')->middleware('IsAdmin');
+Route::post('/supplements-update/{id}', 'SupplementsController@update')->name('supplements-update')->middleware('IsAdmin');
 Route::delete('/destroy/{id}', 'SupplementsController@destroy')->name('supplements-destroy')->middleware('IsAdmin');
 
 

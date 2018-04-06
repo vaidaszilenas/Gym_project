@@ -21,12 +21,16 @@
                 <span class="coach_surname text-center"> {{$coach->phone}} </span>
                 <hr class="hrtag">
                 <p class="text-center font-weight-bold" style="font-size: 15px;">{{$coach->description}}.</p>
+                @if (Auth::check())
+                  @if (Auth::user()->isAdmin())
                 <a href="{{route('coaches-edit', $coach->id)}}" class="btn btn-warning btn-sm" style="background-color: black; border: 1px solid red; color: white;">Edit</a>
                 <form class="" action="{{route('coaches-destroy', $coach->id)}}" method="post" style="display: inline-block;">
                   {{ csrf_field() }}
                   {{ method_field('delete') }}
                   <button type="submit" name="button" class="btn btn-warning btn-sm" style="background-color: black; border: 1px solid red; color: white;">Delete</button>
                 </form>
+              @endif
+            @endif
               </div>
 
             </div>

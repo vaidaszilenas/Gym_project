@@ -10018,8 +10018,10 @@ main {
   background-color: red;
 }
 
-.page-link:active {
-  background-color: red;
+.page-item.active .page-link {
+  background-color: black;
+  border: 1px solid red;
+  color: white;
 }
 
 body {

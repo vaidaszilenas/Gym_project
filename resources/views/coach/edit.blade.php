@@ -21,7 +21,7 @@
               <div class="form-group">
                 <label for="name" class="col-md-4 control-label">Name</label>
                 <div class="col-md-6">
-                  <input id="name" type="text" class="form-control" name="name" value="{{old('name')}}">
+                  <input id="name" type="text" class="form-control" name="name" value="{{old('name', $coach->name)}}">
                   @if ($errors->has('name'))
                     <span style="color:red;">{{$errors->first('name')}}</span><br>
                   @endif
@@ -32,7 +32,7 @@
               <div class="form-group">
                 <label for="title" class="col-md-4 control-label">Surname</label>
                 <div class="col-md-6">
-                  <input id="surname" type="text" class="form-control" name="surname" value="{{old('surname')}}">
+                  <input id="surname" type="text" class="form-control" name="surname" value="{{old('surname', $coach->surname)}}">
                   @if ($errors->has('surname'))
                     <span style="color:red;">{{$errors->first('surname')}}</span><br>
                   @endif
@@ -42,7 +42,7 @@
               <div class="form-group">
                 <label for="title" class="col-md-4 control-label">Description</label>
                 <div class="col-md-6">
-                  <textarea id="description" type="text" class="form-control" name="description" value="{{old('description')}}"></textarea>
+                  <textarea id="description" type="text" class="form-control" name="description">{{old('description', $coach->description)}}</textarea>
                   @if ($errors->has('description'))
                     <span style="color:red;">{{$errors->first('description')}}</span><br>
                   @endif
@@ -52,7 +52,7 @@
               <div class="form-group">
                 <label for="price" class="col-md-4 control-label">Email</label>
                 <div class="col-md-6">
-                  <input id="email" type="text" step="0.01" class="form-control" name="email" value="{{old('email')}}">
+                  <input id="email" type="text" step="0.01" class="form-control" name="email" value="{{old('email', $coach->email)}}">
                   @if ($errors->has('email'))
                     <span style="color:red;">{{$errors->first('email')}}</span><br>
                   @endif
@@ -62,7 +62,7 @@
               <div class="form-group">
                 <label for="price" class="col-md-4 control-label">Phone</label>
                 <div class="col-md-6">
-                  <input id="phone" type="text" step="0.01" class="form-control" name="phone" value="{{old('phone')}}">
+                  <input id="phone" type="text" step="0.01" class="form-control" name="phone" value="{{old('phone', $coach->phone)}}">
                   @if ($errors->has('phone'))
                     <span style="color:red;">{{$errors->first('phone')}}</span><br>
                   @endif
